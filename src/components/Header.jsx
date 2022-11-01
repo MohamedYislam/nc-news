@@ -1,6 +1,6 @@
 const Header = () => {
     return <>
-        <h1>Inside Header</h1>   
+        <h1>NC-News</h1>   
     </>
 }
 
