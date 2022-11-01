@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.imagesOfTopic {
+  width: 30%;
+  height: auto;
+}
+
+.articleCardClass {
+  border-style: solid;
+}
+
+
+
+

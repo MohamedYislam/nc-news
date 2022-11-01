@@ -31,12 +31,3 @@ const Articles = () => {
 
 
 export default Articles
-// return <ul>
-// {books.map((book) => {
-// return <BookCard book={book} />
-// })}
-
-// </ul>
-// const {book} = props
-// return <li> {book.title}</li>
-
