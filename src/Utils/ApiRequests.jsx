@@ -22,9 +22,16 @@ const ApiRequests = {
             return articles
         })
     },
-    getArticleById(id){
-        return api.get(`https://news-app-msy.herokuapp.com/api/articles/${id}`)
+    getArticleById(article_id){
+        return axios.get(`https://news-app-msy.herokuapp.com/api/articles/${article_id}`)
         .then(({ data : { article }}) => {
+            return article
+        })
+    },
+    voteArticle(id, num){
+        return axios.patch(`https://news-app-msy.herokuapp.com/api/articles/${id}`,
+        {inc_votes: num})
+        .then(({ data : article}) => {
             return article
         })
     }
