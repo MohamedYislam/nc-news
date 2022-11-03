@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import ArticleCard from "./ArticleCard"
-import ApiRequests from "../ApiRequests/ApiRequests"
+import ApiRequests from "../Utils/ApiRequests"
 
 const Articles = () => {
     const [articles, setArticles] = useState("")
@@ -9,15 +9,14 @@ const Articles = () => {
 
     useEffect(() => {
         ApiRequests.getArticles()
-        .then(({data : {articles}}) => {
+        .then((articles ) => {
             setArticles(articles)
             setLoading(false);
         })
     }, [])
 
-    if (loading) {
-        return <h5>Articles are loading...</h5>
-    }
+    if (loading) return <h5>  Loading...</h5>
+    
     return  <ul className = "articles"> 
         
             {articles.map((article) => {
