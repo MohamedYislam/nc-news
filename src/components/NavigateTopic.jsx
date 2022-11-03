@@ -27,7 +27,6 @@ const NavigateTopic = () => {
                 </Link>
               );
             })}
-          {/* </ul> */}
         </nav>
       );
   
