@@ -13,7 +13,22 @@
 
 }
 
+.vote {
+  width:150px;
+  margin-left:20px;
 
+
+  float: left;
+  clear: left;
+  justify-content: center;
+
+
+
+  display: block;
+  float: none; 
+  clear: both;
+  
+}
 
 
 .imagesOfTopic {

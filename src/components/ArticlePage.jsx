@@ -2,17 +2,20 @@ import { useParams } from "react-router-dom"
 import ApiRequests from "../Utils/ApiRequests";
 import { useState, useEffect } from "react";
 import HelperFunctions from "../Utils/HelperFunctions";
+import Vote from './Vote';
 
 
 const ArticlePage = () => {
+    const  { article_id }  = useParams();
     const [article, setArticle] = useState([])
     const [loading, setLoading] = useState([true])
-    const  { article_id }  = useParams();
+    const [votes, setVotes] = useState(article.votes)
 
     useEffect(() => {
         ApiRequests.getArticleById(article_id).then((article) => {
             setArticle(article)
             setLoading(false)
+            setVotes(article.votes)
         })  
     }, [article_id])
 
@@ -23,7 +26,8 @@ const ArticlePage = () => {
         <h6> Posted by {article.author} on {HelperFunctions.generateDate(article.created_at)}</h6>
         {HelperFunctions.generateImageByTopic(article.topic)}
         <h4 className = "articleComment"> {article.body}</h4>
-        <h4 className = "articleVotes" >{article.votes}</h4>
+        <h4> {votes}</h4>
+        <Vote article={article} setVotes = {setVotes} />
      </>
     
 
