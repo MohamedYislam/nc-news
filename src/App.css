@@ -59,3 +59,19 @@
   
 }
 
+/* .Comments{
+  justify-content: center;
+  align-items: center;
+} */
+
+.commentCardClass {
+  border-style: solid;
+  /* height: 500; */
+  width:auto; 
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(69, 121, 17, 0.842);
+}
+
+
