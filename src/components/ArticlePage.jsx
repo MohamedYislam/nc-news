@@ -3,6 +3,7 @@ import ApiRequests from "../Utils/ApiRequests";
 import { useState, useEffect } from "react";
 import HelperFunctions from "../Utils/HelperFunctions";
 import Vote from './Vote';
+import Comments from "./Comments";
 
 
 const ArticlePage = () => {
@@ -28,6 +29,7 @@ const ArticlePage = () => {
         <h4 className = "articleComment"> {article.body}</h4>
         <h4> {votes}</h4>
         <Vote article={article} setVotes = {setVotes} />
+        <Comments article={article} />
      </>
     
 
