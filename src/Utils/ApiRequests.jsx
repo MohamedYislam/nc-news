@@ -40,6 +40,10 @@ const ApiRequests = {
         .then(({data : comments }) => {
             return comments
         })
+    },
+    postComment(article_id, username, comment){
+        return api.post(`/articles/${article_id}/comments`,
+        {username: username, body: comment})
     }
 }
 
