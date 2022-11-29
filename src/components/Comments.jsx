@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState} from "react"
 import ApiRequests from "../Utils/ApiRequests"
 import CommentCard from "./CommentCard"
+import CommentPost from "./CommentPost"
 
 const Comments = ({article : {article_id}}) => {
     const [comments, setComments] = useState([])
     const [loading, setLoading] = useState(true);
-
 
     useEffect(() => {
         ApiRequests.getComment(article_id).then((commentArray) => {
@@ -16,12 +16,15 @@ const Comments = ({article : {article_id}}) => {
 
     if (loading) return <h5>  Loading...</h5>
 
-    console.log(comments, "<<<comments")
-    return <ul className ="Comments"> 
-            {comments.map((comment) => {
-                return <CommentCard comment={comment} key={comments.comment_id} />
-            })}
+    return <>
+            <CommentPost article_id={article_id}/>
+            <ul className ="Comments"> 
+                {comments.map((comment) => {
+                    return <CommentCard comment={comment} key={comments.comment_id} />
+                })
+            }   
         </ul>
+    </>
 
 
 
