@@ -97,3 +97,22 @@
   left: 10px;
 }
 
+.queryClassOne {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+select {
+  width: 20%;
+  padding: 10px 10px;
+  border: solid #2B65EC ;
+  border-radius: 10px;
+  background-color:white;
+}
+
+select option {
+  font-size: 1rem;
+}
+
