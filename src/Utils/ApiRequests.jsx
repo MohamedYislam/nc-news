@@ -4,8 +4,8 @@ import axios from "axios";
 const api = axios.create({ baseURL: 'https://news-app-msy.herokuapp.com/api' })
  
 const ApiRequests = {
-    getArticles() {
-        return api.get(`/articles`)
+    getArticles(sortBy='created_at', order='desc') {
+        return api.get(`/articles?sortBy=${sortBy}&&order=${order}`)
         .then(({ data: { articles }}) => {
             return articles
         })
