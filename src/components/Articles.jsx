@@ -12,7 +12,7 @@ const Articles = () => {
 
     useEffect(() => {
         ApiRequests.getArticles(sortBy, order)
-        .then((articles ) => {
+        .then((articles) => {
             setArticles(articles)
             setLoading(false);
         })

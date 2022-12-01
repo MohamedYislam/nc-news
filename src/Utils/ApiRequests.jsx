@@ -44,6 +44,9 @@ const ApiRequests = {
     postComment(article_id, username, comment){
         return api.post(`/articles/${article_id}/comments`,
         {username: username, body: comment})
+    },
+    removeComment(comment_id){
+        return api.delete(`/comments/${comment_id}`)
     }
 }
 
