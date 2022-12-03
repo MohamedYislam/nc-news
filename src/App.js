@@ -6,6 +6,7 @@ import NavigateTopic from './components/NavigateTopic';
 import Topics from './components/Topics';
 import ArticlePage from './components/ArticlePage';
 import { UserContext } from './Context/userContext';
+import ErrorHandling from './components/ErrorHandling';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Header />
           <NavigateTopic/>
           <Routes>
+              <Route path ="*" element={<ErrorHandling />} />
               <Route path = "/" element = {< Articles />} />
               <Route path = "/topics/:topic" element = {<Topics />} />
               <Route path = "/articles/:article_id" element = {< ArticlePage />} />
@@ -23,8 +25,8 @@ function App() {
         </div>
       </BrowserRouter>
     </UserContext.Provider>
-
   );
-}
+}            
+
 
 export default App;

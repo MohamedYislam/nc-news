@@ -1,5 +1,5 @@
 import { useEffect, useState} from "react"
-import ApiRequests from "../Utils/ApiRequests"
+import API from "../Utils/API"
 import CommentCard from "./CommentCard"
 import CommentPost from "./CommentPost"
 
@@ -8,7 +8,7 @@ const Comments = ({article : {article_id}}) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        ApiRequests.getComment(article_id).then((commentArray) => {
+        API.getComment(article_id).then((commentArray) => {
             setComments(commentArray)
             setLoading(false)
         })

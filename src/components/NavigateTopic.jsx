@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import ApiRequests from '../Utils/ApiRequests'
+import API from '../Utils/API'
 
 
 const NavigateTopic = () => {
@@ -9,7 +9,7 @@ const NavigateTopic = () => {
     const [loading, setLoading] = useState([true])
 
     useEffect(() => {
-        ApiRequests.getTopics().then((topics) => {
+        API.getTopics().then((topics) => {
             setTopics(topics);
             setLoading(false);
         })
