@@ -11,17 +11,24 @@ const ArticlePage = () => {
     const [article, setArticle] = useState([])
     const [loading, setLoading] = useState([true])
     const [votes, setVotes] = useState(article.votes)
+    const [error, setError] = useState(false)
 
     useEffect(() => {
         ApiRequests.getArticleById(article_id).then((article) => {
             setArticle(article)
             setLoading(false)
             setVotes(article.votes)
-        })  
+        }).catch(() => {
+            setLoading(false)
+            setError(true)
+        })
     }, [article_id])
 
     if(loading) return <h3>Loading...</h3>
+    if (error) return <h2 className = "errorClass"> Invalid Article</h2>
     
+
+
     return  <>
         <h2 className = "articleTitle"> {article.title} </h2>
         <h6> Posted by {article.author} on {HelperFunctions.generateDate(article.created_at)}</h6>
