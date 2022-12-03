@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
-import ApiRequests from "../Utils/ApiRequests"
+import API from "../Utils/API"
 import ArticleCard from "./ArticleCard"
 
 const Topics = () => {
@@ -10,7 +10,7 @@ const Topics = () => {
     const [error, setError] = useState(false)
 
     useEffect(() => {
-        ApiRequests.getArticlesByTopic(topic)
+        API.getArticlesByTopic(topic)
             .then((filteredArticles) => {
                 setArticles(filteredArticles)
                 setLoading(false)
