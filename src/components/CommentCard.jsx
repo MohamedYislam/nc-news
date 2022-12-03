@@ -1,5 +1,5 @@
 import HelperFunctions from "../Utils/HelperFunctions"
-import ApiRequests from "../Utils/ApiRequests"
+import API from "../Utils/API"
 import { UserContext } from '../Context/userContext';
 import { useContext, useState } from "react";
 
@@ -9,8 +9,7 @@ const CommentCard = (props) => {
     const { comment : { author, body, created_at, comment_id, votes }} = props
 
     const handleDelete = () => {
-        console.log(comment_id, "<<<comment_id")
-        ApiRequests.removeComment(comment_id)
+        API.removeComment(comment_id)
             .then(() => {
                 setButton(false)
                 window.location.reload(false);
