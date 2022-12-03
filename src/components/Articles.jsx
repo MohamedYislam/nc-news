@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import ArticleCard from "./ArticleCard"
-import ApiRequests from "../Utils/ApiRequests"
+import API from "../Utils/API"
 import ArticleQuery from "./ArticleQuery"
 
 const Articles = () => {
@@ -11,7 +11,7 @@ const Articles = () => {
     const [order, setOrder] = useState('desc')
 
     useEffect(() => {
-        ApiRequests.getArticles(sortBy, order)
+        API.getArticles(sortBy, order)
         .then((articles) => {
             setArticles(articles)
             setLoading(false);
