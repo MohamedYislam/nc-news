@@ -7,6 +7,7 @@ const Topics = () => {
     const { topic } = useParams();
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState([true])
+    const [error, setError] = useState(false)
 
     useEffect(() => {
         ApiRequests.getArticlesByTopic(topic)
@@ -14,9 +15,14 @@ const Topics = () => {
                 setArticles(filteredArticles)
                 setLoading(false)
             })
+            .catch((res) => {
+                setLoading(false)
+                setError(true)
+            })
     }, [topic])
 
     if (loading) return <h5> Loading... </h5>
+    if (error) return <h2 className="errorClass"> Invalid Topic </h2>
 
     return  <ul className = "articles"> 
         {articles.map((article) => {
