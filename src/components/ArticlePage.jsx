@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import ApiRequests from "../Utils/ApiRequests";
+import API from "../Utils/API";
 import { useState, useEffect } from "react";
 import HelperFunctions from "../Utils/HelperFunctions";
 import Vote from './Vote';
@@ -7,14 +7,14 @@ import Comments from "./Comments";
 
 
 const ArticlePage = () => {
-    const  { article_id }  = useParams();
+    const { article_id }  = useParams();
     const [article, setArticle] = useState([])
     const [loading, setLoading] = useState([true])
     const [votes, setVotes] = useState(article.votes)
     const [error, setError] = useState(false)
 
     useEffect(() => {
-        ApiRequests.getArticleById(article_id).then((article) => {
+        API.getArticleById(article_id).then((article) => {
             setArticle(article)
             setLoading(false)
             setVotes(article.votes)
