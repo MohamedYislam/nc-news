@@ -1,9 +1,8 @@
 import axios from "axios";
 
-
-const api = axios.create({ baseURL: 'https://news-app-msy.herokuapp.com/api' })
+const api = axios.create({ baseURL: 'https://news-app-msy.cyclic.app/api' })
  
-const ApiRequests = {
+const API = {
     getArticles(sortBy='created_at', order='desc') {
         return api.get(`/articles?sortBy=${sortBy}&&order=${order}`)
         .then(({ data: { articles }}) => {
@@ -50,4 +49,4 @@ const ApiRequests = {
     }
 }
 
-export default ApiRequests;
+export default API;
