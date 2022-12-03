@@ -116,3 +116,8 @@ select option {
   font-size: 1rem;
 }
 
+.errorClass{
+  color: red;
+
+}
+
