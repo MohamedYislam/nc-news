@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import ApiRequests from "../Utils/ApiRequests"
+import { useState } from "react"
+import API from "../Utils/API"
 
 const Vote = ({setVotes , article}) => {
 
@@ -8,7 +8,7 @@ const Vote = ({setVotes , article}) => {
     const handleVoteChange = (num) => {
         setVoteChange(currentVote => currentVote + num)
         setVotes((currVote) => currVote + num);
-        ApiRequests.voteArticle(article.article_id, 1).catch((err) => {
+        API.voteArticle(article.article_id, 1).catch((err) => {
             setVoteChange(currentVote => currentVote - num)
             setVotes((currCount) => currCount - 1);
             return <> Error </>
