@@ -1,6 +1,6 @@
 import { useState, useContext } from "react"
 import { UserContext } from "../Context/userContext";
-import ApiRequests from "../Utils/ApiRequests";
+import API from "../Utils/API";
 
 const CommentPost = (props) => {
     const { username } = useContext(UserContext);
@@ -11,7 +11,7 @@ const CommentPost = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         setLoading(true)
-        ApiRequests.postComment(props.article_id, username, commentText).then(() => {
+        API.postComment(props.article_id, username, commentText).then(() => {
             setCommentText("")
             setButton(true)
             window.location.reload(false);
