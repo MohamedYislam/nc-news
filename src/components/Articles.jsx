@@ -21,7 +21,6 @@ const Articles = () => {
     if (loading) return <h5>  Loading...</h5>
     
     return <>
-
             <ArticleQuery   order={order}   sortBy={sortBy} setOrder={setOrder} setSortBy={setSortBy} /> 
             <ul className = "articles"> 
                     {articles.map((article) => {
