@@ -44,11 +44,11 @@ The dependencies used are:
 - react-router-dom
 
 
-To install them all in the terminal type
+To install them all, in the terminal type
 
     npm install
 
-Finally to run the website
+To run the website
 
     npm start
 
