@@ -13,14 +13,12 @@ Users can:
 The API used for this project was developed seperately using Node.js and can be found at https://github.com/MohamedYislam/backend-news-project
 
 ## Live Version
-------
 
 The live version of the application can be found hosted at 
 
 https://news-msy.netlify.app/
 
 ## SETUP
------
 
 To run the website locally:
 
