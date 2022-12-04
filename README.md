@@ -16,8 +16,8 @@ The API used for this project was developed seperately using Node.JS and can be 
 ------
 
 The live version of the application  can be found hosted at 
+
 https://news-msy.netlify.app/
-<p>&nbsp;</p>
 
 ## SETUP
 -----
